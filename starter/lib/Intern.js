@@ -1,1 +1,1 @@
-// TODO: Write code to define and export the Intern class.  HINT: This class should inherit from Employee.
+//Code to define and export the Intern class
