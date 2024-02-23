@@ -82,7 +82,7 @@ function createEngineer () {
     {
         type: 'input',
         name: 'description',
-        message: 'What is their office number?',     
+        message: 'What is their GitHub username?',     
   },
 ])
 
@@ -112,7 +112,7 @@ function createIntern () {
     {
         type: 'input',
         name: 'description',
-        message: 'What is their office number?',
+        message: 'What is their school?',
         
     },
   
