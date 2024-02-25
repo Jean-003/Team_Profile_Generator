@@ -37,11 +37,14 @@ node index.js
 
 Next, the user will be prompted to enter an answer to the first question shown below:
 
-#### What is the Manager's Name?
+_What is the Manager's Name?_
 
-Upon entering an answer, a series of 3 - 4 more questions per type of employee requesting the user to enter their responses follows.
+Upon entering an answer, a series of 3 - 4 more questions requesting the user to enter their responses follows.
 
-At the end of this, the user is alerted that an HTML webpage that displays the summaries for each employee has been successfully generated.
+Next the user will asked if they would like to add another employee, based on the response a series of 3-4 questions per employee type requesting the user to enter their responses follows.
+
+Anytime the user decides to not add anymore employees, the questions will cease and the user is alerted that an HTML webpage that displays summaries for each employee who are part of a sotware engineering team is generated.
+
 
 ## Licences 
 
