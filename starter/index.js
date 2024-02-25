@@ -13,19 +13,8 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-function createTeam () {
-      inquirer
-    .prompt([
-        {
-        type: 'list',
-        name: 'employee type',
-        message: 'Add another employee?',
-        choices: ['Engineer', 'Intern'], 
-    },
-    ])
- }
 
-function createManager () {
+function createManager() {
 
     inquirer
   .prompt([
@@ -54,10 +43,32 @@ function createManager () {
         
     },  
   ])
-
+  .then((answers) => {
+});
 }
 
-function createEngineer () {
+function createTeam() {
+  inquirer
+.prompt([
+    {
+    type: 'list',
+    name: 'employee type',
+    message: 'Add another employee?',
+    choices: ['Engineer', 'Intern', 'No'], 
+},
+])
+
+.then((answers) => {
+if (answers.employeeType === 'Engineer') {
+  createEngineer();
+} else if (answers.employeeType === 'Intern') {
+  createIntern();
+} else {
+}
+});
+}
+
+function createEngineer() {
 
     inquirer
   .prompt([
@@ -85,9 +96,35 @@ function createEngineer () {
         message: 'What is their GitHub username?',     
   },
 ])
+.then((answers) => {
+});
 
 }
-function createIntern () {
+
+createTeam();
+
+// function createTeam () {
+//   inquirer
+// .prompt([
+//     {
+//     type: 'list',
+//     name: 'employee type',
+//     message: 'Add another employee?',
+//     choices: ['Engineer', 'Intern', 'No'], 
+// },
+// ])
+
+// .then((answers) => {
+// if (answers.employeeType === 'Engineer') {
+//   createEngineer();
+// } else if (answers.employeeType === 'Intern') {
+//   createIntern();
+// } else {
+// }
+// });
+// }
+
+function createIntern() {
 
     inquirer
   .prompt([
@@ -117,10 +154,38 @@ function createIntern () {
     },
   
   ])
-
+  .then((answers) => {
+});
 }
+
+createTeam();
+
+
+// function createTeam () {
+//   inquirer
+// .prompt([
+//     {
+//     type: 'list',
+//     name: 'employee type',
+//     message: 'Add another employee?',
+//     choices: ['Engineer', 'Intern', 'No'], 
+// },
+// ])
+
+// .then((answers) => {
+// if (answers.employeeType === 'Engineer') {
+//   createEngineer();
+// } else if (answers.employeeType === 'Intern') {
+//   createIntern();
+// } else {
+// }
+// });
+// }
 
 promptUser()
 .then((answers) => writeFileAsync('index.html', generateHTML(answers)))
 .then(() => console.log('Successfully wrote to index.html'))
 .catch((err) => console.error(err));
+
+
+

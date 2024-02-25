@@ -23,6 +23,5 @@ class Employee {
     }
 }
 
-const _Employee = Employee;
-export { _Employee as Employee };
+module.exports = Employee;
 
