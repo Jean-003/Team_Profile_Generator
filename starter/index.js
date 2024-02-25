@@ -11,8 +11,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
-
+//Code to gather information about the development team members and to render the HTML file.
+let team = []
 
 function createManager() {
 
@@ -26,24 +26,28 @@ function createManager() {
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'employeeID',
         message: 'What is their employee ID?',
         
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'email',
         message: 'What is their email address?',
         
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'officeNumber',
         message: 'What is their office number?',
         
     },  
   ])
-  .then((answers) => {
+  .then((answers) => { 
+
+   let {title, employeeID, email, officeNumber} = answers 
+   const manager = new Manager(title, employeeID, email, officeNumber) 
+   team.push(manager)
 });
 }
 
@@ -64,6 +68,8 @@ if (answers.employeeType === 'Engineer') {
 } else if (answers.employeeType === 'Intern') {
   createIntern();
 } else {
+  let generatedHTML = render(team)
+  writeFileAsync('index.html', generatedHTML)
 }
 });
 }
@@ -80,49 +86,29 @@ function createEngineer() {
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'employeeID',
         message: 'What is their employee ID?',
         
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'email',
         message: 'What is their email address?',
         
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'username',
         message: 'What is their GitHub username?',     
   },
 ])
-.then((answers) => {
+.then((answers) => { 
+  let {title, employeeID, email, username} = answers 
+  const engineer = new Engineer(title, employeeID, email, username) 
+  team.push(engineer)
 });
 
 }
-
-createTeam();
-
-// function createTeam () {
-//   inquirer
-// .prompt([
-//     {
-//     type: 'list',
-//     name: 'employee type',
-//     message: 'Add another employee?',
-//     choices: ['Engineer', 'Intern', 'No'], 
-// },
-// ])
-
-// .then((answers) => {
-// if (answers.employeeType === 'Engineer') {
-//   createEngineer();
-// } else if (answers.employeeType === 'Intern') {
-//   createIntern();
-// } else {
-// }
-// });
-// }
 
 function createIntern() {
 
@@ -136,56 +122,37 @@ function createIntern() {
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'employeeID',
         message: 'What is their employee ID?',
         
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'email',
         message: 'What is their email address?',
         
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'school',
         message: 'What is their school?',
         
     },
   
   ])
   .then((answers) => {
+    let {title, employeeID, email, school} = answers 
+    const intern = new Intern(title, employeeID, email, school) 
+    team.push(intern)
 });
 }
 
-createTeam();
 
 
-// function createTeam () {
-//   inquirer
-// .prompt([
-//     {
-//     type: 'list',
-//     name: 'employee type',
-//     message: 'Add another employee?',
-//     choices: ['Engineer', 'Intern', 'No'], 
-// },
-// ])
 
-// .then((answers) => {
-// if (answers.employeeType === 'Engineer') {
-//   createEngineer();
-// } else if (answers.employeeType === 'Intern') {
-//   createIntern();
-// } else {
-// }
-// });
-// }
 
-promptUser()
-.then((answers) => writeFileAsync('index.html', generateHTML(answers)))
-.then(() => console.log('Successfully wrote to index.html'))
-.catch((err) => console.error(err));
+
+
 
 
 
