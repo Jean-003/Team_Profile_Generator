@@ -66,7 +66,7 @@ function createTeam() {
 ])
 
 .then(answers => {
-  switch (answers.employee type) {
+  switch (answers.employeeType) {
     case "Engineer":
       // call engineer function
       createEngineer();
