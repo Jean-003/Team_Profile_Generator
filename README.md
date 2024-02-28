@@ -54,6 +54,7 @@ All tests passed (utilised the Jest package).
 
 
 
+![Screenshot 2024-02-27 211904](https://github.com/Jean-003/Team_Profile_Generator/assets/152238337/e1ee7161-d5f4-4745-9d7d-58aff9387735)
 
 
 
