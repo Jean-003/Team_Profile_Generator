@@ -19,13 +19,13 @@ https://github.com/Jean-003/Team_Profile_Generator
 
 To generate an HTML webpage that displays summaries for each employee in a sotware engineering team with the following criteria:
 
-Name
-Employee ID
-Email address
-Office number
-Email
-GitHub username
-School
+-Name
+-Employee ID
+-Email address
+-Office number
+-Email
+-GitHub username
+-School
 
 
 User should run the following command in their terminal or their GitBash:
@@ -57,7 +57,13 @@ Anytime that the user decides to not add anymore employees, the questions will c
 
 
 
-When this team.index HTML is opened in the browser, a webpage that displays summaries for each employee who are part of a sotware engineering team is displayed as shown in the example below:
+
+
+
+**When this team.index HTML is opened in the browser, a webpage that displays summaries for each employee who are part of a sotware engineering team is displayed as shown in the example below:**
+
+
+
 
 
 
