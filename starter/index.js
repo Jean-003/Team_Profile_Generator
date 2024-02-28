@@ -1,6 +1,6 @@
-const Manager = require("./starter/lib/Manager.js");
-const Engineer = require("./starter/lib/Engineer.js");
-const Intern = require("./starter/lib/Intern.js");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -8,11 +8,13 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./starter/src/page-template.js");
+const render = require("./src/page-template.js");
 
 
 //Code to gather information about the development team members and to render the HTML file.
 let team = []
+function displayOptions() {
+
 
 function createManager() {
 
@@ -48,6 +50,7 @@ function createManager() {
    let {title, employeeID, email, officeNumber} = answers 
    const manager = new Manager(title, employeeID, email, officeNumber) 
    team.push(manager)
+   createTeam()
 });
 }
 
@@ -56,23 +59,34 @@ function createTeam() {
 .prompt([
     {
     type: 'list',
-    name: 'employee type',
+    name: 'employeeType',
     message: 'Add another employee?',
     choices: ['Engineer', 'Intern', 'No'], 
 },
 ])
 
-.then((answers) => {
-if (answers.employeeType === 'Engineer') {
-  createEngineer();
-} else if (answers.employeeType === 'Intern') {
-  createIntern();
-} else {
-  let generatedHTML = render(team)
-  writeFileAsync('index.html', generatedHTML)
-}
+.then(answers => {
+  switch (answers.employee type) {
+    case "Engineer":
+      // call engineer function
+      createEngineer();
+      break;
+    case "Intern":
+      // call intern function
+      createIntern();
+      break;
+    default:
+  
+      if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+      }
+      const generatedHTML = render(team);
+        fs.writeFileSync(outputPath, generatedHTML);
+      
+  }
 });
-}
+};
+
 
 function createEngineer() {
 
@@ -106,6 +120,7 @@ function createEngineer() {
   let {title, employeeID, email, username} = answers 
   const engineer = new Engineer(title, employeeID, email, username) 
   team.push(engineer)
+  createTeam()
 });
 
 }
@@ -144,11 +159,13 @@ function createIntern() {
     let {title, employeeID, email, school} = answers 
     const intern = new Intern(title, employeeID, email, school) 
     team.push(intern)
+    createTeam()
 });
 }
+createManager()
+}
 
-
-
+displayOptions()
 
 
 
