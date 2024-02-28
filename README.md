@@ -13,7 +13,9 @@ https://github.com/Jean-003/Team_Profile_Generator
 
 ### Sample of an HTML file generated using this application
 
-*******************
+
+http://127.0.0.1:5501/starter/output/team.html 
+
 
 ## Usage
 
