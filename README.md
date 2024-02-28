@@ -41,9 +41,21 @@ _What is the Manager's Name?_
 
 Upon entering an answer, a series of 3 - 4 more questions requesting the user to enter their responses follows.
 
-Next the user will asked if they would like to add another employee, based on the response a series of 3-4 questions per employee type requesting the user to enter their responses follows.
+Next the user will be asked if they would like to 'add another employee' (3 options are provided - Engineer, Intern, and No) and based on the user's response a series of 3-4 more questions per employee type requesting the user to enter employee details follows.
 
-Anytime the user decides to not add anymore employees, the questions will cease and the user is alerted that an HTML webpage that displays summaries for each employee who are part of a sotware engineering team is generated.
+Anytime that the user decides to not add anymore employees, the questions will cease and a 'team HTML' file containing all the user's responses is generated. When this team.index HTML is opened in the browser, a webpage that displays summaries for each employee who are part of a sotware engineering team is displayed as shown in the example below:
+
+
+
+
+## Tests
+
+All tests passed (utilised the Jest package).
+
+
+
+
+
 
 
 ## Licences 
@@ -54,17 +66,130 @@ Anytime the user decides to not add anymore employees, the questions will cease 
 
 The following starter code was supplied by edX:
 
-### Javascript file:
+### Page Template Javascript file:
+
+// creates the team
+<!-- const generateTeam = team => {
+
+    // creates the manager html
+    const generateManager = manager => {
+        return `
+        <div class="card employee-card">
+        <div class="card-header">
+            <h2 class="card-title">${manager.getName()}</h2>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${manager.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
+            </ul>
+        </div>
+    </div>
+        `;
+    };
+
+    // creates the html for engineers
+    const generateEngineer = engineer => {
+        return `
+        <div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">${engineer.getName()}</h2>
+        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: ${engineer.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
+        </ul>
+    </div>
+</div>
+        `;
+    };
+
+    // creates the html for interns
+    const generateIntern = intern => {
+        return `
+        <div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">${intern.getName()}</h2>
+        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: ${intern.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+            <li class="list-group-item">School: ${intern.getSchool()}</li>
+        </ul>
+    </div>
+</div>
+        `;
+    };
+
+    const html = [];
+
+    html.push(team
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+    html.push(team
+        .filter(employee => employee.getRole() === "Engineer")
+        .map(engineer => generateEngineer(engineer))
+        .join("")
+    );
+    html.push(team
+        .filter(employee => employee.getRole() === "Intern")
+        .map(intern => generateIntern(intern))
+        .join("")
+    );
+
+    return html.join("");
+
+}
+
+// exports function to generate entire page
+module.exports = team => {
+
+    return `
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 jumbotron mb-3 team-heading">
+                <h1 class="text-center">My Team</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="team-area col-12 d-flex justify-content-center">
+                ${generateTeam(team)}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    `;
+};
 
 
+ -->
 
+ ### Code to Run the Tests
 
-
-
-
-
-
-
-
-
-
+ _See tests folder inside the starter folder_
