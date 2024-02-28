@@ -43,7 +43,30 @@ Upon entering an answer, a series of 3 - 4 more questions requesting the user to
 
 Next the user will be asked if they would like to 'add another employee' (3 options are provided - Engineer, Intern, and No) and based on the user's response a series of 3-4 more questions per employee type requesting the user to enter employee details follows.
 
-Anytime that the user decides to not add anymore employees, the questions will cease and a 'team HTML' file containing all the user's responses is generated. When this team.index HTML is opened in the browser, a webpage that displays summaries for each employee who are part of a sotware engineering team is displayed as shown in the example below:
+Anytime that the user decides to not add anymore employees, the questions will cease and a 'team HTML' file containing all the user's responses is generated. 
+
+
+**Image showing the result of running 
+```
+node index.js
+
+```  in the intergrated terminal in Visual Studio Code.
+
+
+
+![Screenshot 2024-02-28 184552](https://github.com/Jean-003/Team_Profile_Generator/assets/152238337/242998a0-60e0-40c6-a9e3-c7f0aefc858e)
+
+
+
+
+
+
+When this team.index HTML is opened in the browser, a webpage that displays summaries for each employee who are part of a sotware engineering team is displayed as shown in the example below:
+
+
+
+
+![Screenshot 2024-02-28 184634](https://github.com/Jean-003/Team_Profile_Generator/assets/152238337/91b02715-5bce-4f25-88e6-deb35e359832)
 
 
 
@@ -57,6 +80,9 @@ All tests passed (utilised the Jest package).
 ![Screenshot 2024-02-27 211904](https://github.com/Jean-003/Team_Profile_Generator/assets/152238337/e1ee7161-d5f4-4745-9d7d-58aff9387735)
 
 
+
+
+**_An example HTML file that is gerenerated after running the node index.js command can be found located in the 'output folder inside the 'starter' folder'_**
 
 
 ## Licences 
