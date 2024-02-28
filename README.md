@@ -46,7 +46,7 @@ Next the user will be asked if they would like to 'add another employee' (3 opti
 Anytime that the user decides to not add anymore employees, the questions will cease and a 'team HTML' file containing all the user's responses is generated. 
 
 
-**Image showing the result of runnind the command: node index.js in the intergrated terminal in Visual Studio Code.
+**Image showing the result of running the command: node index.js in the intergrated terminal in Visual Studio Code.**
 
 
 
